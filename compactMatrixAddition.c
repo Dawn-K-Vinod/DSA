@@ -2,6 +2,7 @@
 // Read 2 Sparse matrices and display them
 // Convert both to Compact matrix and display 
 // Add those 2 compact matrices and display the resultant compact matrix
+// then find the transpose of that final resultant compact matrix and display it
 
 #include <stdio.h>
 
@@ -126,5 +127,15 @@ int main() {
 
     printf("\nResultant Compact Matrix:");
     display_matrix(k, 3, result);
+
+    int transposeMat[3][k];
+    for (int i=0; i<k; i++) {
+        for (int j=0; j<3; j++) {
+            transposeMat[j][i] = result[i][j];
+        }
+    }
+    printf("\nTranspose of Resultant Compact Matrix:");
+    display_matrix(3, k, transposeMat);
+
     return 0;
 }
