@@ -141,6 +141,61 @@ int main() {
     }
     printf("\nTranspose of Resultant Compact Matrix:");
     display_matrix(3, k, transposeMat); // Display transpose
-
     return 0;
 }
+
+// SAMPLE INPUT/OUTPUT
+/*
+Enter number of rows and columns: 3 3
+
+Enter first sparse matrix: 
+Enter row-1: 0 3 0
+Enter row-2: 5 2 0
+Enter row-3: 0 0 6
+
+Enter second sparse matrix: 
+Enter row-1: 1 4 0
+Enter row-2: 0 0 0
+Enter row-3: 3 0 2
+
+First Sparse Matrix: 
+0 3 0 
+5 2 0 
+0 0 6 
+
+Second Sparse Matrix: 
+1 4 0 
+0 0 0 
+3 0 2 
+
+Compact Matrix 1:
+3 3 4 
+0 1 3 
+1 0 5 
+1 1 2 
+2 2 6 
+
+Compact Matrix 2:
+3 3 4 
+0 0 1 
+0 1 4 
+2 0 3 
+2 2 2 
+
+Resultant Compact Matrix:
+3 3 6 
+0 0 1 
+0 1 7 
+1 0 5 
+1 1 2 
+2 0 3 
+2 2 8 
+
+Transpose of Resultant Compact Matrix:
+3 0 0 1 1 2 2 
+3 0 1 0 1 0 2 
+6 1 7 5 2 3 8 
+*/
+
+
+////////////////////////////////////////////////////////////////////////////
