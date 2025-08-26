@@ -5,6 +5,7 @@ Infix to Postfix Conversion
 #include <stdio.h>
 #include <ctype.h>
 #include <stdlib.h>
+#include <string.h>
 
 char *stack;
 char *expr;
@@ -50,8 +51,8 @@ int main() {
         if (isalpha(expr[i]) || isdigit(expr[i])) {
             printf("%c",expr[i]);
         }
-        else if (expr[i] == '+' || expr[i] == '-' || expr[i] == '*' || expr[i] == '/' || expr[i] == '^' || expr[i] == '%' || expr[i] == '(') {
-            if (expr[TOP] == '(') { 
+        else if (strchr("+*-/^%%(",expr[i]) != NULL) {
+            if (stack[TOP] == '(') { 
                 PUSH(expr[i]);
                 continue;
             }
