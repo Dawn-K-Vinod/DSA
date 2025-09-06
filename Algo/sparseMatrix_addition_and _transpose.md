@@ -1,4 +1,4 @@
-# 🟢 **Algorithm: Compact Matrix Addition** 
+# 🟢 **Algorithm: Sparse Matrix Addition** 
 
 ---
 
