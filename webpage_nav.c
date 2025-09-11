@@ -1,11 +1,3 @@
-/*
-1. visit new page
-2. go back
-3. go forward
-4. display current page
-5. exit
-*/
-
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -18,18 +10,25 @@ struct node {
 
 void visit_new_page() {
     
-    struct node *newnode = (struct node*) malloc (sizeof(struct node));
-    if (current == NULL) head, tail = newnode;
-    else {
-        newnode->prev = tail;
-        newnode->next = NULL;
-        tail->next = newnode;
-        tail = newnode;
+    if (current != tail && current != NULL) {
+        while (tail != current) {
+            tail = tail->prev;
+            free(tail->next);
+            tail->next = NULL;
+        }
     }
-    current = newnode;
+
+    newnode = (struct node*) malloc (sizeof(struct node));
     printf("Enter the URL: ");
-    getchar();
-    scanf("%19[^\n]", newnode->URL);
+    scanf(" %19[^\n]", newnode->URL);
+
+    if (current == NULL) head = tail = current = newnode;
+    else {
+        newnode->prev = current;
+        newnode->next = NULL;
+        current->next = newnode;
+        current = tail = newnode;
+    }
 }
 
 void go_back() {
@@ -57,11 +56,11 @@ void display() {
 
 
 int main() {
-    head, tail, newnode, current = NULL;
+    head = tail = newnode = current = NULL;
 
     int choice = 0;
-    int exit = false;
-    while (!exit) {
+    int done = false;
+    while (!done) {
         printf("\n>> DLL Operations Menu <<\n");
         printf("1. Visit new page\n");
         printf("2. Go back\n");
@@ -82,9 +81,9 @@ int main() {
             case 4:
                 display(); break;
             case 5:
-                exit = true; break;
+                done = true; break;
             default:
-                printf("Invalid choice");
+                printf("Invalid choice"); 
         }
     }
     return 0;
