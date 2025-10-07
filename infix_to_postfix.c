@@ -29,12 +29,11 @@ void POP() {
 int precedence(char ch) {
     switch(ch) {
         case '+':
-        case '-':
-            return 0;
-        
+        case '-': return 1;
         case '/':
-        case '*':
-            return 1;
+        case '*': return 2;
+        case '^': return 3;
+        default: return -1;
     }
 }
 
@@ -51,7 +50,7 @@ int main() {
         if (isalpha(expr[i]) || isdigit(expr[i])) {
             printf("%c",expr[i]);
         }
-        else if (strchr("+*-/^%%(",expr[i]) != NULL) {
+        else if (strchr("+*-/^%(",expr[i]) != NULL) {
             if (stack[TOP] == '(') { 
                 PUSH(expr[i]);
                 continue;
