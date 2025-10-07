@@ -1,0 +1,2 @@
+1. create a binary tree for a given arithmetic expression and find the prefix/postfix equivalent.
+2. implement bin search tree by performing insertion, search and deletion of numbers using linked list.
