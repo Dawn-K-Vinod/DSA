@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 int MAX_SIZE;
-// memory block structure
+
 struct memory {
     int size;
     int startAddr;
@@ -9,7 +9,7 @@ struct memory {
     struct memory *prev;
     struct memory *next;
 };
-// function to create new memory block
+
 struct memory *createBlock(int size, int addr, int isFree) {
     struct memory *newnode = (struct memory*) malloc(sizeof(struct memory));
     newnode->size = size;
@@ -20,7 +20,7 @@ struct memory *createBlock(int size, int addr, int isFree) {
     return newnode;
 }
 void displayAll(struct memory *temp);
-// function to allocate new process
+
 struct memory *allocateProcess(struct memory *head, int size, int choice) {
     struct memory *temp = head, *selected = NULL;
     
@@ -66,7 +66,7 @@ struct memory *allocateProcess(struct memory *head, int size, int choice) {
     displayAll(head);
     return head;
 }
-// function to merge all contiguous free memory blocks
+
 void garbageCollector(struct memory *temp) {
     struct memory *toDelete;
     while (temp && temp->next) {
@@ -82,7 +82,7 @@ void garbageCollector(struct memory *temp) {
         }
     }
 }
-// function to display all allocated and free memory blocks
+
 void displayAll(struct memory *temp) {
     while (temp) {
         printf("%s %d-%d (sz=%d)] <-> ", 
@@ -101,7 +101,7 @@ void display_freeOrAllocatedBlocks(struct memory *temp, int isFree) {
     }
     printf("NULL\n");
 }
-// to unallocate or free an existing process
+
 void freeProcess(struct memory *head, int addr) {
     struct memory *temp = head;
     while (temp && temp->startAddr!=addr) temp = temp->next;
