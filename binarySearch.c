@@ -34,7 +34,8 @@ int main() {
                 printf("Enter the key to search: ");
                 scanf("%d", &key);
                 int keyIndex = binarySearch(sortedArray, 0, n-1, key);
-                if (keyIndex!=-1) printf("The key %d is found at position %d\n", key, keyIndex); 
+                if (keyIndex!=-1) 
+                    printf("The key %d is found at position %d\n", key, keyIndex); 
                 else printf("The key %d is not found.\n", key);
                 break;
             case 2:
