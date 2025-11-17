@@ -1,8 +1,3 @@
-/*
-given an array of sorted items, 
-implement an efficient algorithm to search for specific item in the array and 
-also find the time and space complexity
-*/
 #include <stdio.h>
 
 int binarySearch(int arr[], int start, int end, int key) {
