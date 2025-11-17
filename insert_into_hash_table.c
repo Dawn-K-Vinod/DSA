@@ -1,3 +1,8 @@
+/*
+You are given a hash table with 10 slots (indexed from 0 to 9). 
+You are also provided with a set of integers that need to be inserted
+into the ahst table using a hash function.
+*/
 #include <stdio.h>
 #include <stdlib.h>
 
