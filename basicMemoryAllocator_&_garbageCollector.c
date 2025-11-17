@@ -1,4 +1,3 @@
-// simulation of a basic memory allocator and garbage collector using doubly linked list
 #include <stdio.h>
 #include <stdlib.h>
 int MAX_SIZE;
