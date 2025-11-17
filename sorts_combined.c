@@ -1,4 +1,7 @@
-
+/*
+implement bubble sort, insertion sort, quick sort, and 
+merge sort and compare the number of steps involved
+*/
 #include <stdio.h>
 int swap_count=0;
 int comparison_count=0;
